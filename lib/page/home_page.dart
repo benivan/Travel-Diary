@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
+import 'package:travel_diary/page/favorites.dart';
 import 'package:travel_diary/page/main_page.dart';
+import 'package:travel_diary/page/profile.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key key}) : super(key: key);
@@ -22,6 +24,8 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFf9f9f9),
+
+      // TODO: Change bottom navigation bar [https://github.com/BilalShahid13/PersistentBottomNavBar]
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 8),
         child: BottomNavigationBar(
@@ -40,10 +44,24 @@ class _HomepageState extends State<Homepage> {
           },
         ),
       ),
-      body: currentItem == 0
-      ? MainPage()
-      : DemoPage(),
+      body: navigateToScreen(),
     );
+  }
+
+  navigateToScreen() {
+    switch (currentItem) {
+      case 0:
+        return MainPage();
+        break;
+      case 2:
+        return Favorites();
+        break;
+      case 3:
+        return ProfilePage();
+        break;
+      default:
+        return DemoPage();
+    }
   }
 }
 

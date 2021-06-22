@@ -18,7 +18,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: GoogleFonts.quicksand().fontFamily
+        fontFamily: GoogleFonts.quicksand().fontFamily,
+        bottomSheetTheme: BottomSheetThemeData(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(8),
+              topRight: Radius.circular(8)
+            )
+          )
+        )
       ),
       debugShowCheckedModeBanner: false,
       home: Homepage(),

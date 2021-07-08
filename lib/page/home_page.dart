@@ -93,7 +93,8 @@ var items = [
         FontAwesomeIcons.user,
         size: 20,
       ),
-      activeIcon: FaIcon(FontAwesomeIcons.solidUser,
+      activeIcon: FaIcon(
+        FontAwesomeIcons.solidUser,
         size: 20,
       ),
       title: Text("Account")),

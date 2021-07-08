@@ -23,7 +23,9 @@ class _UpcomingTripsState extends State<UpcomingTrips> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     }),
-                SizedBox(width: 5,),
+                SizedBox(
+                  width: 5,
+                ),
                 Text(
                   "Upcoming trips",
                   style: GoogleFonts.quicksand(

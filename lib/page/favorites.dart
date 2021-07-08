@@ -30,7 +30,8 @@ class _FavoritesState extends State<Favorites> {
               physics: BouncingScrollPhysics(),
               itemCount: 14,
               itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 child: Card(
                   elevation: 10,
                   shape: RoundedRectangleBorder(
@@ -54,11 +55,10 @@ class _FavoritesState extends State<Favorites> {
                             width: double.infinity,
                             margin: EdgeInsets.all(20),
                             decoration: ShapeDecoration(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(13),
-                              ),
-                              color: Color(0xffDBDBD9).withOpacity(0.8)
-                            ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(13),
+                                ),
+                                color: Color(0xffDBDBD9).withOpacity(0.8)),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -66,26 +66,30 @@ class _FavoritesState extends State<Favorites> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(left: 20),
-                                  child: Text("Nusa Penida Island",
-                                  style: GoogleFonts.quicksand(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(0.75)
-                                  ),),
+                                  child: Text(
+                                    "Nusa Penida Island",
+                                    style: GoogleFonts.quicksand(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.black.withOpacity(0.75)),
+                                  ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 20),
                                   child: Row(
                                     children: [
-                                      Icon(Icons.add_location_rounded,
-                                      size: 16,),
+                                      Icon(
+                                        Icons.add_location_rounded,
+                                        size: 16,
+                                      ),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 4),
-                                        child: Text("Paris, France",
-                                        style: GoogleFonts.quicksand(
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black54
-                                        ),),
+                                        child: Text(
+                                          "Paris, France",
+                                          style: GoogleFonts.quicksand(
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black54),
+                                        ),
                                       ),
                                     ],
                                   ),

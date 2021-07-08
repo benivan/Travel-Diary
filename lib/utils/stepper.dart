@@ -13,16 +13,17 @@ class CartStepper extends StatefulWidget {
 
   CartStepper(
       {Key key,
-        this.count = 0,
-        @required this.didChangeCount,
-        this.activeForegroundColor = Colors.white,
-        this.activeBackgroundColor = Colors.blue,
-        this.deActiveForegroundColor = Colors.black,
-        this.deActiveBackgroundColor = Colors.white,
-        this.size = 50.0,
-        this.axis = Axis.horizontal,
-        this.numberSize = 2})
+      this.count = 0,
+      @required this.didChangeCount,
+      this.activeForegroundColor = Colors.white,
+      this.activeBackgroundColor = Colors.blue,
+      this.deActiveForegroundColor = Colors.black,
+      this.deActiveBackgroundColor = Colors.white,
+      this.size = 50.0,
+      this.axis = Axis.horizontal,
+      this.numberSize = 2})
       : super(key: key);
+
   @override
   _CartStepperState createState() => _CartStepperState();
 }
@@ -121,11 +122,11 @@ class _CartStepperState extends State<CartStepper> {
       curve: Curves.easeIn,
       child: widget.axis == Axis.vertical
           ? Column(
-        children: childs,
-      )
+              children: childs,
+            )
           : Row(
-        children: childs.reversed.toList(),
-      ),
+              children: childs.reversed.toList(),
+            ),
     );
   }
 }

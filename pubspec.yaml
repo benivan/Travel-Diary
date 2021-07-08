@@ -29,6 +29,7 @@ dependencies:
   fluentui_system_icons:
   google_fonts:
   path_provider:
+  font_awesome_flutter:
 
 
 dev_dependencies:

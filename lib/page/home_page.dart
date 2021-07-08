@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_diary/page/favorites.dart';
 import 'package:travel_diary/page/main_page.dart';
 import 'package:travel_diary/page/profile.dart';
@@ -80,15 +81,20 @@ var items = [
       activeIcon: Icon(SFSymbols.house_fill),
       title: Text("Home")),
   BottomNavigationBarItem(
-      icon: Icon(SFSymbols.map),
-      activeIcon: Icon(SFSymbols.map_fill),
+      icon: FaIcon(FontAwesomeIcons.compass),
+      activeIcon: FaIcon(FontAwesomeIcons.solidCompass),
       title: Text("Map")),
   BottomNavigationBarItem(
       icon: Icon(SFSymbols.heart),
       activeIcon: Icon(SFSymbols.heart_fill),
       title: Text("Favorites")),
   BottomNavigationBarItem(
-      icon: Icon(SFSymbols.person_circle),
-      activeIcon: Icon(SFSymbols.person_circle_fill),
+      icon: FaIcon(
+        FontAwesomeIcons.user,
+        size: 20,
+      ),
+      activeIcon: FaIcon(FontAwesomeIcons.solidUser,
+        size: 20,
+      ),
       title: Text("Account")),
 ];

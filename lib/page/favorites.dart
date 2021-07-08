@@ -13,14 +13,17 @@ class _FavoritesState extends State<Favorites> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(15, 60, 15, 20),
+      padding: EdgeInsets.fromLTRB(15, 60, 15, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Favorites",
-            style: GoogleFonts.quicksand(
-                fontSize: 30, fontWeight: FontWeight.w800),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text(
+              "Favorites",
+              style: GoogleFonts.quicksand(
+                  fontSize: 25, fontWeight: FontWeight.w800),
+            ),
           ),
           Expanded(
             child: ListView.builder(

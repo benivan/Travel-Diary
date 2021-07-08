@@ -36,50 +36,79 @@ class _MainPageState extends State<MainPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  decoration: ShapeDecoration(
-                      color: Colors.white,
+                Row(
+                  children: [
+                    Card(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(30),
                       ),
-                      shadows: [
-                        BoxShadow(
-                            color: Color(0x4ac5c5c5),
-                            blurRadius: 5,
-                            spreadRadius: 8)
-                      ]),
-                  padding: EdgeInsets.all(8),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.network(
-                      "https://avatars.githubusercontent.com/u/15737675?v=4",
-                      width: 50,
-                      height: 50,
+                      elevation: 20,
+                      color: Colors.transparent,
+                      clipBehavior: Clip.antiAlias,
+                      child: BackdropFilter(
+                        filter:
+                            new ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        child: Container(
+                          color: Colors.grey.shade200.withOpacity(0.3),
+                          padding: EdgeInsets.all(6),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Image.network(
+                              "https://avatars.githubusercontent.com/u/15737675?v=4",
+                              width: 50,
+                              height: 50,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      "Hi, Prakash!",
+                      style: GoogleFonts.quicksand(
+                          fontSize: 18, fontWeight: FontWeight.w700),
+                    )
+                  ],
                 ),
                 Container(
                     decoration: ShapeDecoration(
-                        color: Colors.white,
+                        color: Colors.white38,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(22),
                         ),
                         shadows: [
                           BoxShadow(
                               color: Color(0x4ac5c5c5),
-                              blurRadius: 5,
+                              blurRadius: 10,
                               spreadRadius: 8)
                         ]),
                     padding: EdgeInsets.all(8),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: IconButton(
-                          icon: Icon(
-                            SFSymbols.plus,
-                            color: Colors.black,
+                    child: Container(
+                      decoration: ShapeDecoration(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                      ),
+                      padding: EdgeInsets.all(5),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          color: Colors.white,
+                          child: Center(
+                            child: IconButton(
+                                icon: Icon(
+                                  SFSymbols.plus,
+                                  color: Colors.black,
+                                ),
+                                onPressed: onPlusButtonPressed),
                           ),
-                          iconSize: 30,
-                          onPressed: onPlusButtonPressed),
+                        ),
+                      ),
                     )),
               ],
             ),

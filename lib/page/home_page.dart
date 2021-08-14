@@ -3,6 +3,7 @@ import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_diary/page/favorites.dart';
 import 'package:travel_diary/page/main_page.dart';
+import 'package:travel_diary/page/maps.dart';
 import 'package:travel_diary/page/profile.dart';
 
 class Homepage extends StatefulWidget {
@@ -57,11 +58,12 @@ class _HomepageState extends State<Homepage> {
       case 2:
         return Favorites();
         break;
+      case 1:
+        return Maps();
+        break;
       case 3:
         return ProfilePage();
         break;
-      default:
-        return DemoPage();
     }
   }
 }

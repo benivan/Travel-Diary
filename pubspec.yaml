@@ -30,6 +30,7 @@ dependencies:
   google_fonts:
   path_provider:
   font_awesome_flutter:
+  google_maps_flutter:
 
 
 dev_dependencies:

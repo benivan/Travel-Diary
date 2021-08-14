@@ -66,74 +66,77 @@ class _ProfilePageState extends State<ProfilePage> {
           SizedBox(
             height: 10,
           ),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Card(
-                color: Color(0xffF7EBE5),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "10",
-                        style: GoogleFonts.quicksand(fontSize: 40),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5, right: 20),
-                        child: Text("Countries"),
-                      )
-                    ],
+          Container(
+            width: double.infinity,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Card(
+                  color: Color(0xffF7EBE5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "10",
+                          style: GoogleFonts.quicksand(fontSize: 40),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5, right: 20),
+                          child: Text("Countries"),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Card(
-                color: Color(0xffE9F5EA),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "1",
-                        style: GoogleFonts.quicksand(fontSize: 40),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5, right: 20),
-                        child: Text("Continent"),
-                      )
-                    ],
+                Card(
+                  color: Color(0xffE9F5EA),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "2",
+                          style: GoogleFonts.quicksand(fontSize: 40),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5, right: 20),
+                          child: Text("Continent"),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Card(
-                color: Color(0xffEAEBFA),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "10",
-                        style: GoogleFonts.quicksand(fontSize: 40),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5, right: 20),
-                        child: Text("Countries"),
-                      )
-                    ],
+                Card(
+                  color: Color(0xffEAEBFA),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "23",
+                          style: GoogleFonts.quicksand(fontSize: 40),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5, right: 20),
+                          child: Text("Cities      "),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           SizedBox(
             height: 5,

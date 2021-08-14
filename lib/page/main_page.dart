@@ -25,6 +25,37 @@ class _MainPageState extends State<MainPage> {
     "Antarctica"
   ];
 
+  List<Category> popular = [
+    Category("Mountains",
+        "https://www.dunyaatlasi.com/wp-content/uploads/2021/02/himalayalar.jpg"),
+    Category("Beaches",
+        "https://media.cntraveler.com/photos/57fea9ec8584f8cd20e65f15/16:9/w_1600%2Cc_limit/Aerial-One%26OnlyReethiRah-Maldives-CRHotel.jpg"),
+    Category("Hill Stations",
+        "https://avatars.githubusercontent.com/u/15737675?v=4"),
+    Category("Islands", "https://avatars.githubusercontent.com/u/15737675?v=4"),
+    Category(
+        "Snow World", "https://avatars.githubusercontent.com/u/15737675?v=4")
+  ];
+
+  List<Place> places = [
+    Place("Taj Mahal", "India",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Taj_Mahal_in_India_-_Kristian_Bertel.jpg/1200px-Taj_Mahal_in_India_-_Kristian_Bertel.jpg"),
+    Place("Eiffel Tower", "Paris",
+        "https://www.cnet.com/a/img/A7WJsx7lIYfvN3ieKCey-rACzjU=/940x0/2015/02/25/49752f72-14d6-4033-af9c-88d40611d3c7/eiffel1.jpg"),
+    Place("Colosseum of Rome", "Italy",
+        "https://st0.dancf.com/gaoding-material/2020-06-08/1591580687-pPI2Q.jpg?x-oss-process=image/resize,w_800/interlace,1,image/format,webp"),
+    Place("Great wall of China", "China",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ulstein-Church-2020.jpg/454px-Ulstein-Church-2020.jpg"),
+    Place("Leaning Tower of Pisa", "Italy",
+        "https://preview.redd.it/5f01kxd61mi51.png?auto=webp&s=38b4e5a400b045a188916cd64e74169c48994d1e"),
+    Place("Stonehenge", "England",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ulstein-Church-2020.jpg/454px-Ulstein-Church-2020.jpg"),
+    Place("Taj Mahal", "India",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ulstein-Church-2020.jpg/454px-Ulstein-Church-2020.jpg"),
+    Place("Taj Mahal", "India",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ulstein-Church-2020.jpg/454px-Ulstein-Church-2020.jpg"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -185,7 +216,7 @@ class _MainPageState extends State<MainPage> {
             child: ListView.builder(
               physics: BouncingScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 10,
+              itemCount: popular.length,
               padding: EdgeInsets.all(10),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
@@ -211,7 +242,7 @@ class _MainPageState extends State<MainPage> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(18),
                         child: Image.network(
-                          "https://avatars.githubusercontent.com/u/15737675?v=4",
+                          popular[index].image,
                           width: 50,
                           height: 50,
                           fit: BoxFit.cover,
@@ -220,7 +251,7 @@ class _MainPageState extends State<MainPage> {
                       Padding(
                         padding: const EdgeInsets.only(left: 14, right: 8),
                         child: Text(
-                          "Mountains",
+                          popular[index].name,
                           style: GoogleFonts.quicksand(
                               textStyle: TextStyle(
                                   fontWeight: FontWeight.w700,
@@ -262,7 +293,7 @@ class _MainPageState extends State<MainPage> {
             child: ListView.builder(
               shrinkWrap: true,
               physics: BouncingScrollPhysics(),
-              itemCount: continents.length,
+              itemCount: places.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Container(
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -284,9 +315,9 @@ class _MainPageState extends State<MainPage> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(21),
                         child: Image.network(
-                          "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ulstein-Church-2020.jpg/454px-Ulstein-Church-2020.jpg",
+                          places[index].imageUrl,
                           height: 200,
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                           width: 170,
                         ),
                       ),
@@ -303,13 +334,13 @@ class _MainPageState extends State<MainPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Taj Mahal",
+                                    places[index].name,
                                     style: GoogleFonts.quicksand(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
                                   ),
                                   Text(
-                                    "India",
+                                    places[index].location,
                                     style: GoogleFonts.quicksand(
                                         color: Colors.grey.shade800
                                             .withOpacity(0.8),
@@ -567,4 +598,19 @@ class _MainPageState extends State<MainPage> {
                   )),
             ));
   }
+}
+
+class Place {
+  String name;
+  String location;
+  String imageUrl;
+
+  Place(this.name, this.location, this.imageUrl);
+}
+
+class Category {
+  String name;
+  String image;
+
+  Category(this.name, this.image);
 }

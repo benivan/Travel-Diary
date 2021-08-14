@@ -79,15 +79,15 @@ var items = [
   BottomNavigationBarItem(
       icon: Icon(SFSymbols.house),
       activeIcon: Icon(SFSymbols.house_fill),
-      title: Text("Home")),
+      label: "Home"),
   BottomNavigationBarItem(
       icon: FaIcon(FontAwesomeIcons.compass),
       activeIcon: FaIcon(FontAwesomeIcons.solidCompass),
-      title: Text("Map")),
+      label: "Map"),
   BottomNavigationBarItem(
       icon: Icon(SFSymbols.heart),
       activeIcon: Icon(SFSymbols.heart_fill),
-      title: Text("Favorites")),
+      label: "Favorites"),
   BottomNavigationBarItem(
       icon: FaIcon(
         FontAwesomeIcons.user,
@@ -97,5 +97,5 @@ var items = [
         FontAwesomeIcons.solidUser,
         size: 20,
       ),
-      title: Text("Account")),
+      label: "Account"),
 ];

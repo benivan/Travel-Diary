@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UpcomingTrips extends StatefulWidget {
-  const UpcomingTrips({Key key}) : super(key: key);
+  const UpcomingTrips({Key? key}) : super(key: key);
 
   @override
   _UpcomingTripsState createState() => _UpcomingTripsState();

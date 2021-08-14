@@ -12,9 +12,9 @@ class CartStepper extends StatefulWidget {
   final Function(int count) didChangeCount;
 
   CartStepper(
-      {Key key,
+      {Key? key,
       this.count = 0,
-      @required this.didChangeCount,
+      required this.didChangeCount,
       this.activeForegroundColor = Colors.white,
       this.activeBackgroundColor = Colors.blue,
       this.deActiveForegroundColor = Colors.black,

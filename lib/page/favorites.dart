@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_diary/page/main_page.dart';
 
 class Favorites extends StatefulWidget {
-  const Favorites({Key key}) : super(key: key);
+  const Favorites({Key? key}) : super(key: key);
 
   @override
   _FavoritesState createState() => _FavoritesState();

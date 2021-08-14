@@ -7,14 +7,14 @@ import 'package:travel_diary/page/maps.dart';
 import 'package:travel_diary/page/profile.dart';
 
 class Homepage extends StatefulWidget {
-  const Homepage({Key key}) : super(key: key);
+  const Homepage({Key? key}) : super(key: key);
 
   @override
   _HomepageState createState() => _HomepageState();
 }
 
 class _HomepageState extends State<Homepage> {
-  int currentItem;
+  late int currentItem;
 
   @override
   void initState() {

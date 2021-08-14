@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_diary/utils/stepper.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key key}) : super(key: key);
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -335,6 +335,8 @@ class _MainPageState extends State<MainPage> {
                                 children: [
                                   Text(
                                     places[index].name,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                     style: GoogleFonts.quicksand(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),

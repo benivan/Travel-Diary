@@ -5,7 +5,7 @@ import 'package:travel_diary/page/recent_trips.dart';
 import 'package:travel_diary/page/upcoming_trips.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key key}) : super(key: key);
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   _ProfilePageState createState() => _ProfilePageState();

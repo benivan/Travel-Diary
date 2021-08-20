@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
 import 'package:path/path.dart';
+import 'package:travel_diary/model/favorites.dart';
 
 class DatabaseHelper {
   DatabaseHelper._();
@@ -22,8 +25,17 @@ class DatabaseHelper {
         version: 1,
         onCreate: (Database db, int version) async {
           // Create table queries
-          db.execute("");
+          db.execute('''
+          CREATE TABLE favorite()''');
         });
   }
 
+  addFavorite(Favorite favorite) {
+
+  }
+
+
 }
+
+
+typedef Integer = int;

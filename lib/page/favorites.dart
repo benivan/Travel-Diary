@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_diary/page/main_page.dart';
+import 'package:travel_diary/page/web_view.dart';
+import 'package:travel_diary/repository/repository.dart';
 
 class Favorites extends StatefulWidget {
   const Favorites({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class Favorites extends StatefulWidget {
 }
 
 class _FavoritesState extends State<Favorites> {
-
+  Repository repository = Repository();
 
   List<Place> places = [
     Place("Colosseum of Rome", "Italy",
@@ -24,14 +26,20 @@ class _FavoritesState extends State<Favorites> {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Taj_Mahal_in_India_-_Kristian_Bertel.jpg/1200px-Taj_Mahal_in_India_-_Kristian_Bertel.jpg"),
     Place("Eiffel Tower", "Paris",
         "https://www.cnet.com/a/img/A7WJsx7lIYfvN3ieKCey-rACzjU=/940x0/2015/02/25/49752f72-14d6-4033-af9c-88d40611d3c7/eiffel1.jpg"),
-    Place("Taj Mahal", "India",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ulstein-Church-2020.jpg/454px-Ulstein-Church-2020.jpg"),
-    Place("Taj Mahal", "India",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ulstein-Church-2020.jpg/454px-Ulstein-Church-2020.jpg"),
-    Place("Nusa Penida Island", "Paris, France", "https://cdn.theatlantic.com/assets/media/img/mt/2014/04/RTR208HE-2/lead_720_405.jpg"),
-
+    Place("Golden Bridge", "LA",
+        "https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_768/MTY1MTc3MjE0MzExMDgxNTQ1/topic-golden-gate-bridge-gettyimages-177770941.jpg"),
+    Place("Mount Fuji", "Japan",
+        "https://cdn.britannica.com/96/196396-050-13758154/Chureito-Pagoda-Arakura-Sengen-Shrine-Mount-Fuji.jpg"),
+    Place("Nusa Penida Island", "Paris, France",
+        "https://cdn.theatlantic.com/assets/media/img/mt/2014/04/RTR208HE-2/lead_720_405.jpg"),
   ];
 
+
+  @override
+  void initState() {
+    super.initState();
+    places.shuffle();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,85 +61,99 @@ class _FavoritesState extends State<Favorites> {
               physics: BouncingScrollPhysics(),
               itemCount: places.length,
               itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                child: Card(
-                  elevation: 10,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(22)),
-                  child: Container(
-                    height: 220,
-                    child: Stack(
-                      fit: StackFit.expand,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(22),
-                          child: Image.network(
-                            places[index].imageUrl,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Container(
-                            height: 60,
-                            width: double.infinity,
-                            margin: EdgeInsets.all(20),
-                            decoration: ShapeDecoration(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(13),
-                              ),
-                              color: Color(0xffDBDBD9).withOpacity(0.8)
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                child: InkWell(
+                  child: Card(
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(22)),
+                    child: Container(
+                      height: 220,
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(22),
+                            child: Image.network(
+                              places[index].imageUrl,
+                              fit: BoxFit.cover,
                             ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: Text(places[index].name,
-                                  style: GoogleFonts.quicksand(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(0.75)
-                                  ),),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.add_location_rounded,
-                                      size: 16,),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 4),
-                                        child: Text(places[index].location,
-                                        style: GoogleFonts.quicksand(
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black54
-                                        ),),
-                                      ),
-                                    ],
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              height: 60,
+                              width: double.infinity,
+                              margin: EdgeInsets.all(20),
+                              decoration: ShapeDecoration(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(13),
                                   ),
-                                )
-                              ],
+                                  color: Color(0xffDBDBD9).withOpacity(0.8)),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 20),
+                                    child: Text(
+                                      places[index].name,
+                                      style: GoogleFonts.quicksand(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w600,
+                                          color:
+                                              Colors.black.withOpacity(0.75)),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 20),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.add_location_rounded,
+                                          size: 16,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 4),
+                                          child: Text(
+                                            places[index].location,
+                                            style: GoogleFonts.quicksand(
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black54),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          top: 0,
-                          right: 0,
-                          child: Padding(
-                            padding: EdgeInsets.all(5),
-                            child: IconButton(
-                              color: Colors.red.shade200,
-                              icon: Icon(Icons.favorite),
-                              onPressed: () {},
+                          Positioned(
+                            top: 0,
+                            right: 0,
+                            child: Padding(
+                              padding: EdgeInsets.all(5),
+                              child: IconButton(
+                                color: Colors.red.shade200,
+                                icon: Icon(Icons.favorite),
+                                onPressed: () {},
+                              ),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          WebViewPage(url: places.elementAt(index).wikiUrl),
+                    ));
+                  },
                 ),
               ),
             ),

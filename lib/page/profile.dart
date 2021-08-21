@@ -210,13 +210,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Icon(Icons.person)),
             title: Text("Prakash Kumar"),
             subtitle: Text("Personal Info"),
-            trailing: Container(
-                padding: EdgeInsets.all(15),
-                decoration: ShapeDecoration(
-                    color: Colors.grey.shade300,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20))),
-                child: Icon(Icons.arrow_forward)),
+
           ),
         ],
       ),

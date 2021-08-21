@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_diary/page/recent_trips.dart';
 
 class UpcomingTrips extends StatefulWidget {
   const UpcomingTrips({Key? key}) : super(key: key);
@@ -9,6 +10,18 @@ class UpcomingTrips extends StatefulWidget {
 }
 
 class _UpcomingTripsState extends State<UpcomingTrips> {
+  List<PlaceTrip> trips = [
+    PlaceTrip("London, UK",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall_%28cropped%29.jpg/1000px-Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall_%28cropped%29.jpg"),
+    PlaceTrip("Seoul,South Korea",
+        "https://www.onsemi.com/site/images/location-seoul-korea.png"),
+    PlaceTrip("Moscow, Russia",
+        "https://www.bursa.ro/_img/articole/mare/431783.jpg"),
+    PlaceTrip("Los Angels, USA",
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/71/39/f1.jpg"),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +49,7 @@ class _UpcomingTripsState extends State<UpcomingTrips> {
             Expanded(
               child: ListView.builder(
                 physics: BouncingScrollPhysics(),
-                itemCount: 5,
+                itemCount: trips.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -52,7 +65,7 @@ class _UpcomingTripsState extends State<UpcomingTrips> {
                                 height: 120,
                                 width: double.infinity,
                                 child: Image.network(
-                                  "https://cdn.cnn.com/cnnnext/dam/assets/181010131059-australia-best-beaches-cossies-beach-cocos3-super-169.jpg",
+                                  trips[index].imageUrl,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -63,7 +76,7 @@ class _UpcomingTripsState extends State<UpcomingTrips> {
                                     width: double.infinity,
                                     child: Center(
                                         child: Text(
-                                      "Paris, France",
+                                      trips[index].name,
                                       style: GoogleFonts.quicksand(
                                           color: Colors.white,
                                           fontSize: 28,
